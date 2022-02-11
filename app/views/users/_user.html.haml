@@ -22,3 +22,9 @@
     .row
       Last sign in ip
       = user.last_sign_in_ip
+  .card-footer
+    Confirmed Email?
+    - if user.confirmed_at.present?
+      .badge.bg-success Yes
+    - else
+      .badge.bg-danger No
