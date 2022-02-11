@@ -8,19 +8,19 @@
     ago
   .card-footer
     .row
-      Sign in count:
+      %b `#{'sign_in_count'.humanize}:`
       = user.sign_in_count
     .row
-      Current sign in at:
+      %b `#{'current_sign_in_at'.humanize}:`
       = user.current_sign_in_at
     .row
-      Last sign in at:
+      %b `#{'last_sign_in_at'.humanize}:`
       = user.last_sign_in_at
     .row
-      Current sign in ip
+      %b `#{'current_sign_in_ip'.humanize}:`
       = user.current_sign_in_ip
     .row
-      Last sign in ip
+      %b `#{'last_sign_in_ip'.humanize}:`
       = user.last_sign_in_ip
   .card-footer
     Confirmed Email?
