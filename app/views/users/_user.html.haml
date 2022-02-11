@@ -1,30 +1,31 @@
-.card
-  .card-header
-    .fa.fa-user
-    = user.email
-  .card-body
-    Signed Up
-    = time_ago_in_words(user.created_at)
-    ago
-  .card-footer
-    .row
-      %b `#{'sign_in_count'.humanize}:`
-      = user.sign_in_count
-    .row
-      %b `#{'current_sign_in_at'.humanize}:`
-      = user.current_sign_in_at
-    .row
-      %b `#{'last_sign_in_at'.humanize}:`
-      = user.last_sign_in_at
-    .row
-      %b `#{'current_sign_in_ip'.humanize}:`
-      = user.current_sign_in_ip
-    .row
-      %b `#{'last_sign_in_ip'.humanize}:`
-      = user.last_sign_in_ip
-  .card-footer
-    Confirmed Email?
-    - if user.confirmed_at.present?
-      .badge.bg-success Yes
-    - else
-      .badge.bg-danger No
+.col
+  .card
+    .card-header
+      .fa.fa-user
+      = user.email
+    .card-body
+      Signed Up
+      = time_ago_in_words(user.created_at)
+      ago
+    .card-footer
+      .row.row-cols-2
+        %b.col #{'sign_in_count'.humanize}:
+        .col= user.sign_in_count
+      .row.row-cols-2
+        %b.col #{'current_sign_in_at'.humanize}:
+        .col= user.current_sign_in_at.to_s
+      .row.row-cols-2
+        %b.col #{'last_sign_in_at'.humanize}:
+        .col= user.last_sign_in_at
+      .row.row-cols-2
+        %b.col #{'current_sign_in_ip'.humanize}:
+        .col= user.current_sign_in_ip
+      .row.row-cols-2
+        %b.col #{'last_sign_in_ip'.humanize}:
+        .col= user.last_sign_in_ip
+    .card-footer
+      Confirmed Email?
+      - if user.confirmed_at.present?
+        .badge.bg-success Yes
+      - else
+        .badge.bg-danger No
