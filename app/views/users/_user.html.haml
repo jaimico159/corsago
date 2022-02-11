@@ -2,13 +2,23 @@
   .card-header
     .fa.fa-user
     = user.email
-  .card-footer
+  .card-body
     Signed Up
     = time_ago_in_words(user.created_at)
     ago
   .card-footer
-    = user.sign_in_count
-    = user.current_sign_in_at
-    = user.last_sign_in_at
-    = user.current_sign_in_ip
-    = user.last_sign_in_ip
+    .row
+      Sign in count:
+      = user.sign_in_count
+    .row
+      Current sign in at:
+      = user.current_sign_in_at
+    .row
+      Last sign in at:
+      = user.last_sign_in_at
+    .row
+      Current sign in ip
+      = user.current_sign_in_ip
+    .row
+      Last sign in ip
+      = user.last_sign_in_ip
