@@ -1,8 +1,13 @@
 %nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
-  %a.navbar-brand{:href => "/"} Rubygems
-  %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", :type => "button"}
+  %a.navbar-brand{ href: '/' } Rubygems
+  %button.navbar-toggler{ 'aria-controls' => 'navbarSupportedContent',
+    'aria-expanded' => 'false',
+    'aria-label' => 'Toggle navigation',
+    'data-target' => '#navbarSupportedContent',
+    'data-toggle' => 'collapse',
+    :type => 'button' }
     %span.navbar-toggler-icon
-  #navbarSupportedContent.collapse.navbar-collapse
+  .collapse.navbar-collapse#navbarSupportedContent
     - if current_user
       %ul.navbar-nav.mr-auto
 
@@ -13,7 +18,7 @@
 
         %li.nav-item{class: "#{'active fw-bold' if current_page?(courses_path)}"}
           = link_to courses_path, class: 'nav-link' do
-            .fa.fa-book
+            .fa.fa-graduation-cap
             Courses
 
         %li.nav-item{class: "#{'active fw-bold' if current_page?(new_course_path)}"}
