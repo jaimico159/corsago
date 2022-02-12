@@ -1,7 +1,7 @@
 %h1 `Courses: #{@courses.size}`
 
-.card-columns
+.row.row-cols-1.row-cols-md-2.g-4
   - @courses.each do |course|
-    .col-md-6
+    .col
       = render 'courses/course', course: course
 %br
